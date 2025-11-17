@@ -1,0 +1,107 @@
+/* === Sidebar === */
+.sidebar {
+  background: #11141f;
+  width: 70px; /* collapsed by default */
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #222;
+  box-shadow: 2px 0 12px rgba(0, 255, 255, 0.08);
+  transition: width 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+}
+
+/* Expand on hover */
+.sidebar:hover {
+  width: 220px;
+  padding: 1rem;
+}
+
+/* Links container */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base link style */
+.sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.85rem;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 100%;
+  position: relative;
+}
+
+/* Icon style */
+.sidebar a .icon {
+  font-size: 1.3em;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* Hide text when sidebar is collapsed */
+.sidebar:not(:hover) a .link-text {
+  display: none;
+}
+
+/* Hover effect for all links */
+.sidebar a:hover {
+  background: linear-gradient(120deg, #00fff1, #3b82f6, #00fff1);
+  color: #11141f;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00fff1, 0 0 18px #3b82f6, 0 0 28px #00fff1;
+  text-decoration: none;
+}
+
+/* Active link - default glow when sidebar NOT hovered */
+.sidebar:not(:hover) a.active {
+  background: linear-gradient(90deg, #3b82f6, #00fff1);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 10px #00fff1, 0 0 20px #3b82f6, 0 0 30px #00fff1;
+  animation: activeNeonPulse 2s infinite alternate;
+}
+
+/* Active link when sidebar is hovered - subtle indicator only */
+.sidebar:hover a.active {
+  background: rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 6px #00fff1, 0 0 12px #3b82f6;
+  animation: none;
+  color: #fff;
+}
+
+/* Neon pulse animation */
+@keyframes activeNeonPulse {
+  0% {
+    box-shadow: 0 0 8px #00fff1, 0 0 16px #3b82f6, 0 0 24px #00fff1;
+  }
+  50% {
+    box-shadow: 0 0 12px #00fff1, 0 0 24px #3b82f6, 0 0 36px #00fff1;
+  }
+  100% {
+    box-shadow: 0 0 8px #00fff1, 0 0 16px #3b82f6, 0 0 24px #00fff1;
+  }
+}
+
+/* Optional: subtle inner glow on hover */
+.sidebar a::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 241, 0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.sidebar a:hover::before {
+  opacity: 1;
+}

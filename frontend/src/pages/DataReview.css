@@ -1,0 +1,208 @@
+.data-preview {
+  position: relative;
+  overflow-x: auto; /* horizontal scroll */
+  max-height: 500px; /* set max height for vertical scroll */
+  border-radius: 6px;
+  border: 1px solid #333;
+}
+
+/* Pagination at top */
+.pagination {
+  position: sticky;
+  top: 0;
+  background: #2a2b3c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  z-index: 20; /* above header */
+  border-bottom: 1px solid #444;
+}
+
+.pagination button {
+  padding: 4px 8px;
+  font-size: 0.85em;
+  border-radius: 4px;
+  border: 1px solid #00fff1;
+  background: #1e1f2a;
+  color: #00fff1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #00fff1;
+  color: #1e1f2a;
+}
+
+/* Table */
+.data-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85em;
+  margin-top: 0;
+}
+
+/* Sticky table header */
+.data-preview th {
+  position: sticky;
+  top: 36px; /* below pagination bar */
+  background: #2a2b3c;
+  color: #00fff1;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-bottom: 1px solid #444;
+  text-align: left;
+  z-index: 10;
+}
+
+/* Table cells */
+.data-preview td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #333;
+  text-align: left;
+  font-size: 0.85em;
+}
+
+/* Zebra stripes */
+.data-preview tr:nth-child(even) td {
+  background: #1e1f2a;
+}
+
+/* Hover effect */
+.data-preview tr:hover td {
+  background: #2a2b3c;
+}
+
+
+/* file select section */
+.file-selector {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9em;
+}
+
+.file-selector p {
+  color: #aaa;
+}
+
+.file-selector select {
+  background-color: #1e1f2a;
+  color: #00fff1;
+  border: 1px solid #00fff1;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.file-selector select:hover {
+  background-color: #2a2b3c;
+  border-color: #00fff1;
+}
+
+.file-selector select:focus {
+  outline: none;
+  box-shadow: 0 0 4px #00fff1;
+}
+
+.data-review-container h2 {
+  font-size: 2em;
+  color: #00fff1;
+  margin-bottom: 6px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;       /* center the title */
+}
+
+.data-review-container p.description {
+  font-size: 1em;
+  color: #aaa;               /* muted light gray */
+  margin-bottom: 20px;       /* space between description and file selector */
+  line-height: 1.4;
+}
+
+
+/* ===== */
+
+/* Uploaded files panel narrow by default, showing only header */
+.uploaded-files-panel {
+  position: absolute;
+  top: 100px;
+  right: 1rem;
+  width: 150px; /* just enough for header */
+  max-height: 300px;
+  background: #11141f;
+  color: #e0e0e0;
+  border: 1px solid #00fff1;
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px #00fff1, 0 0 20px #3b82f6;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+/* File list hidden by default */
+.uploaded-files-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0; /* collapse */
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+/* Show file list on hover */
+.uploaded-files-panel:hover ul {
+  max-height: 250px; /* enough to show files */
+  padding-top: 0.5rem; /* add spacing from header */
+  overflow-y: auto;
+}
+
+/* List items style */
+.uploaded-files-panel li.uploaded-file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Hover effect on filenames */
+.uploaded-files-panel li.uploaded-file-item span:hover {
+  background: rgba(0, 255, 241, 0.1);
+  border-radius: 4px;
+  padding: 0 0.25rem;
+}
+
+/* Filename span */
+.uploaded-files-panel li span {
+  cursor: pointer;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+/* Delete button */
+.uploaded-files-panel li .delete-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+}
+
+.uploaded-files-panel li .delete-btn:hover {
+  color: #fff;
+}

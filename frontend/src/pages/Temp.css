@@ -1,0 +1,215 @@
+.upload-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px 50px;
+  border-radius: 16px;
+  background: #11141f;
+  box-shadow: 0 0 10px rgba(0, 255, 241, 0.05);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: #e0e0e0;
+}
+
+.upload-container h2 {
+  margin-bottom: 20px;
+  font-size: 2.2em;
+  color: #00fff1;
+}
+
+.upload-container p {
+  margin-bottom: 25px;
+  font-size: 1.1em;
+  color: #aaa;
+}
+
+.file-input-wrapper {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.file-input-wrapper input[type="file"] {
+  display: none;
+}
+
+/* === Soft Neon File Button === */
+.custom-file-button {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(45deg, #3b82f6, #00fff1);
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 6px #00fff1, 0 0 10px #3b82f6;
+  transition: all 0.3s ease;
+}
+
+.custom-file-button:hover {
+  background: linear-gradient(45deg, #00fff1, #3b82f6);
+  box-shadow: 0 0 12px #00fff1, 0 0 18px #3b82f6;
+  transform: translateY(-1px) scale(1.03);
+}
+
+.selected-file {
+  margin-top: 10px;
+  font-size: 0.95em;
+  color: #ccc;
+  font-style: italic;
+}
+
+.prompt-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1em;
+  color: #00fff1;
+  text-align: left;
+}
+
+.upload-container textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  margin-bottom: 30px;
+  font-size: 1em;
+  resize: vertical;
+  background: #1e2030;
+  color: #e0e0e0;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.upload-container textarea:focus {
+  outline: none;
+  border-color: #00fff1;
+  box-shadow: 0 0 8px rgba(0, 255, 241, 0.3);
+}
+
+/* === Soft Neon Analyze Button === */
+.upload-container button {
+  padding: 16px 40px;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(45deg, #3b82f6, #00fff1);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 6px #00fff1, 0 0 10px #3b82f6;
+  transition: all 0.3s ease;
+}
+
+.upload-container button:hover {
+  background: linear-gradient(45deg, #00fff1, #3b82f6);
+  box-shadow: 0 0 12px #00fff1, 0 0 18px #3b82f6;
+  transform: translateY(-1px) scale(1.03);
+}
+
+.upload-success {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #00ffb0; /* neon green */
+  color: #11141f;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 10px #00ffb0, 0 0 20px #00ffb0;
+  animation: fadeInOut 3s forwards;
+}
+
+/* Fade in and fade out effect */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* ======== */
+
+/* Uploaded files panel on top-right, under header with neon border */
+.uploaded-files-panel {
+  position: absolute;
+  top: 100px; 
+  right: 1rem;
+  width: 350px; /* increased from 250px */
+  max-height: 300px;
+  background: #11141f;
+  color: #e0e0e0;
+  border: 1px solid #00fff1;
+  border-radius: 6px;
+  padding: 0.5rem;
+  overflow-y: auto;
+  box-shadow: 0 0 10px #00fff1, 0 0 20px #3b82f6;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+.uploaded-files-panel h4 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3rem;
+}
+
+.uploaded-files-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.uploaded-files-panel li.uploaded-file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Hover effect only on the filename span, not the delete button */
+.uploaded-files-panel li.uploaded-file-item span:hover {
+  background: rgba(0, 255, 241, 0.1); /* subtle neon highlight */
+  border-radius: 4px;
+  padding: 0 0.25rem;
+}
+
+.uploaded-files-panel li span {
+  cursor: pointer;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left; /* <-- align text to left */
+}
+
+/* Minimal delete button */
+.uploaded-files-panel li .delete-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  transform: none;
+  box-shadow: none;
+}
+
+.uploaded-files-panel li .delete-btn:hover {
+  color: #fff; /* subtle highlight on hover */
+  transform: none; /* no scaling */
+  box-shadow: none; /* remove glow */
+  background: none; /* remove hover background */
+}
+
+/* Upload success message */
+.upload-success {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(0, 255, 0, 0.1);
+  color: #00ff00;
+  border-radius: 4px;
+  font-weight: 500;
+}

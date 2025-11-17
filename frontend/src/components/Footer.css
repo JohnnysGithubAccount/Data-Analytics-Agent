@@ -1,0 +1,35 @@
+.footer {
+  position: fixed;      /* fix to viewport */
+  bottom: 0;            /* stick to bottom */
+  left: 0;
+  width: 100%;          /* full width */
+  background: #11141f;  /* dark techy background to match theme */
+  color: #00fff1;       /* neon text */
+  text-align: center;
+  padding: 1rem 0;
+  z-index: 1000;        /* make sure it's above other content */
+  box-shadow: 0 -2px 10px rgba(0, 255, 241, 0.05);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* spacing between links */
+  margin-bottom: 5px;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #3b82f6; /* neon blue hover */
+}
+
+.footer-links .icon {
+  margin-right: 8px;
+}

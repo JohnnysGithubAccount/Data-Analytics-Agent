@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+python-multipart
+pandas   # if you want to process CSV/Excel
+openpyxl # for Excel support
