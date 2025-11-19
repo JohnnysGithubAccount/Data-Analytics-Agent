@@ -1,6 +1,9 @@
 ### 📝 Overview
 This project implements an **autonomous data analytics platform** powered by a **multi-agent system**. Each agent specializes in tasks such as **data preprocessing, querying, visualization, and interpretation**, and they collaborate to deliver end-to-end insights with minimal human intervention.
 
+### Backend deployment
+Only the frontend is deployed already, the backend will be online soon.
+
 ### ✨ Key Features
 - 🤝 **Multi-Agent Collaboration**: Agents coordinate using **LangChain** and **LangGraph** to manage workflows.  
 - 💬 **Natural Language Interface**: Users can interact with the system conversationally, delegating analytics tasks to agents.  
@@ -15,12 +18,6 @@ This project implements an **autonomous data analytics platform** powered by a *
 - ⚡ **FastAPI** – Backend services and API endpoints  
 - 🎨 **ReactJS** – Frontend visualization and interaction  
 - 📊 **PandasAI** – Automated data analysis and query execution  
-
-### 🚀 Potential Use Cases
-- 📊 Automated business intelligence reporting  
-- 🔍 Real-time anomaly detection in datasets  
-- 💬 Conversational analytics for non-technical users  
-- 🏗️ Scalable data pipelines with agent-based modularity  
 
 ---
 
